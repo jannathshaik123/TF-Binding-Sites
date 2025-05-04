@@ -1,0 +1,139 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/GATA4_consensus.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/GATA4_consensus.fasta -dna -o -nostatus -maxw 8 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/GATA4_consensus 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=            8
+nsites: minsites=        2    maxsites=    16243    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=          129944    N=           16243
+sample: seed=            0    hsfrac=          0
+        searchsize= 100000    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.25 C 0.25 G 0.25 T 0.25 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.25 C 0.25 G 0.25 T 0.25 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF HSWTNNSN MEME-1	width =   8  sites = 16232  llr = 14592  E-value = 3.6e-061
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif HSWTNNSN MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  414:2223
+pos.-specific     C  24212342
+probability       G  24223332
+matrix            T  21373223
+
+         bits    2.0         
+                 1.8         
+                 1.6         
+                 1.4         
+Relative         1.2         
+Entropy          1.0         
+(1.3 bits)       0.8    *    
+                 0.6    *    
+                 0.4    *    
+                 0.2  * *    
+                 0.0 --------
+
+Multilevel           AGATGCCT
+consensus            CCT TGGA
+sequence                 CA C
+                         A  G
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif HSWTNNSN MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 7139 bayes= -0.387819 E= 3.6e-061 
+    63    -12    -45    -32 
+  -110     54     70   -114 
+    54    -57    -63     29 
+  -418   -108    -62    150 
+   -32     -8     26      8 
+   -13     22     18    -34 
+   -73     67      8    -42 
+    17     -8    -31     17 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif HSWTNNSN MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 16232 E= 3.6e-061 
+ 0.386702  0.230228  0.183530  0.199541 
+ 0.116792  0.364726  0.405387  0.113095 
+ 0.363122  0.169190  0.161428  0.306259 
+ 0.013768  0.118070  0.162673  0.705488 
+ 0.200313  0.237279  0.299379  0.263029 
+ 0.228927  0.290849  0.283086  0.197138 
+ 0.150551  0.398241  0.264431  0.186776 
+ 0.280415  0.236434  0.201442  0.281709 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif HSWTNNSN MEME-1 regular expression
+--------------------------------------------------------------------------------
+[AC][GC][AT]T[GTCA][CGA][CG][TACG]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 43.78 secs.
+
+********************************************************************************
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: b88f29b6989d
+
+********************************************************************************
