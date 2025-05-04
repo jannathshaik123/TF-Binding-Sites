@@ -1,0 +1,249 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/Elf5_top_20_sequences.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+sequence_1               1.0000     10  sequence_2               1.0000      8  
+sequence_3               1.0000     10  sequence_4               1.0000      9  
+sequence_5               1.0000     10  sequence_6               1.0000      8  
+sequence_7               1.0000     10  sequence_8               1.0000     10  
+sequence_9               1.0000     10  sequence_10              1.0000      9  
+sequence_11              1.0000     10  sequence_12              1.0000      9  
+sequence_13              1.0000      9  sequence_14              1.0000     10  
+sequence_15              1.0000      8  sequence_16              1.0000      9  
+sequence_17              1.0000      9  sequence_18              1.0000     10  
+sequence_19              1.0000      9  sequence_20              1.0000      8  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/Elf5_top_20_sequences.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/Meme_of_top_20_Seeds 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=       20    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             185    N=              20
+sample: seed=            0    hsfrac=          0
+        searchsize=    185    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.228 C 0.272 G 0.272 T 0.228 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.228 C 0.272 G 0.272 T 0.228 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF ACSCGGAA MEME-1	width =   8  sites =  14  llr = 103  E-value = 6.9e-018
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  9112::aa
+pos.-specific     C  :556::::
+probability       G  :231aa::
+matrix            T  1111::::
+
+         bits    2.1       **
+                 1.9     ****
+                 1.7     ****
+                 1.5 *   ****
+Relative         1.3 *   ****
+Entropy          1.1 *   ****
+(10.6 bits)      0.9 *   ****
+                 0.6 *   ****
+                 0.4 *  *****
+                 0.2 ********
+                 0.0 --------
+
+Multilevel           ACCCGGAA
+consensus              GA    
+sequence                     
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+sequence_6                   +      1  1.76e-05          . ACCCGGAA           
+sequence_10                  +      1  3.53e-05          . A.CCGGAA G         
+sequence_5                   +      1  3.53e-05          . A.CCGGAA .T        
+sequence_17                  +      1  5.01e-05          . AC.CGGAA G         
+sequence_13                  +      1  9.73e-05          . ACC.GGAA G         
+sequence_7                   +      1  9.73e-05          . A.GCGGAA .T        
+sequence_4                   +      1  9.73e-05          . A.GCGGAA G         
+sequence_12                  +      1  2.07e-04          . AC.AGGAA G         
+sequence_3                   +      1  2.79e-04          . A.C.GGAA GT        
+sequence_11                  +      1  2.96e-04          . AC..GGAA GT        
+sequence_18                  -      3  3.68e-04          . TNCCGGAA NT        
+sequence_8                   +      1  4.08e-04          . A..AGGAA GT        
+sequence_1                   +      1  4.08e-04          . A.G.GGAA GT        
+sequence_14                  -      3  7.13e-04          . TNNCGGAA GT        
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_6                        1.8e-05  [+1]
+sequence_10                       3.5e-05  [+1]_1
+sequence_5                        3.5e-05  [+1]_2
+sequence_17                         5e-05  [+1]_1
+sequence_13                       9.7e-05  [+1]_1
+sequence_7                        9.7e-05  [+1]_2
+sequence_4                        9.7e-05  [+1]_1
+sequence_12                       0.00021  [+1]_1
+sequence_3                        0.00028  [+1]_2
+sequence_11                        0.0003  [+1]_2
+sequence_18                       0.00037  2_[-1]
+sequence_8                        0.00041  [+1]_2
+sequence_1                        0.00041  [+1]_2
+sequence_14                       0.00071  2_[-1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF ACSCGGAA width=8 seqs=14
+sequence_6               (    1) ACCCGGAA  1 
+sequence_10              (    1) ANCCGGAA  1 
+sequence_5               (    1) ANCCGGAA  1 
+sequence_17              (    1) ACNCGGAA  1 
+sequence_13              (    1) ACCNGGAA  1 
+sequence_7               (    1) ANGCGGAA  1 
+sequence_4               (    1) ANGCGGAA  1 
+sequence_12              (    1) ACNAGGAA  1 
+sequence_3               (    1) ANCNGGAA  1 
+sequence_11              (    1) ACNNGGAA  1 
+sequence_18              (    3) TNCCGGAA  1 
+sequence_8               (    1) ANNAGGAA  1 
+sequence_1               (    1) ANGNGGAA  1 
+sequence_14              (    3) TNNCGGAA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 20 bayes= 1.82597 E= 6.9e-018 
+   191  -1045  -1045    -67 
+   -64     97    -64    -64 
+  -148     95     20   -148 
+   -13    125   -180   -180 
+ -1045  -1045    188  -1045 
+ -1045  -1045    188  -1045 
+   213  -1045  -1045  -1045 
+   213  -1045  -1045  -1045 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 14 E= 6.9e-018 
+ 0.857143  0.000000  0.000000  0.142857 
+ 0.146636  0.531936  0.174793  0.146636 
+ 0.081464  0.525679  0.311393  0.081464 
+ 0.208029  0.649114  0.077686  0.065171 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ACSCGGAA MEME-1 regular expression
+--------------------------------------------------------------------------------
+AC[CG][CA]GGAA
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.24 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_1                       2.44e-03  10
+sequence_2                       9.26e-01  8
+sequence_3                       1.67e-03  10
+sequence_4                       3.89e-04  [+1(9.73e-05)]_1
+sequence_5                       2.12e-04  [+1(3.53e-05)]_2
+sequence_6                       3.53e-05  [+1(1.76e-05)]
+sequence_7                       5.84e-04  [+1(9.73e-05)]_2
+sequence_8                       2.44e-03  10
+sequence_9                       9.74e-01  10
+sequence_10                      1.41e-04  [+1(3.53e-05)]_1
+sequence_11                      1.78e-03  10
+sequence_12                      8.26e-04  9
+sequence_13                      3.89e-04  [+1(9.73e-05)]_1
+sequence_14                      4.27e-03  10
+sequence_15                      9.26e-01  8
+sequence_16                      7.07e-01  9
+sequence_17                      2.00e-04  [+1(5.01e-05)]_1
+sequence_18                      2.21e-03  10
+sequence_19                      4.70e-01  9
+sequence_20                      1.06e-01  8
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 0fdc55105a06
+
+********************************************************************************

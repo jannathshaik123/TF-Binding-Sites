@@ -1,0 +1,9 @@
+beautifulsoup4
+Bio
+biopython
+matplotlib
+numpy
+plotly
+streamlit
+weblogo
+pandas

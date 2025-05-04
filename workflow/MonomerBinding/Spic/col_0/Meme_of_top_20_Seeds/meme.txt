@@ -1,0 +1,261 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/Spic_top_20_sequences.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+sequence_1               1.0000     10  sequence_2               1.0000     10  
+sequence_3               1.0000      9  sequence_4               1.0000      8  
+sequence_5               1.0000      9  sequence_6               1.0000     10  
+sequence_7               1.0000      8  sequence_8               1.0000      9  
+sequence_9               1.0000     10  sequence_10              1.0000      8  
+sequence_11              1.0000      9  sequence_12              1.0000     10  
+sequence_13              1.0000     10  sequence_14              1.0000      9  
+sequence_15              1.0000      9  sequence_16              1.0000     10  
+sequence_17              1.0000     10  sequence_18              1.0000      8  
+sequence_19              1.0000     10  sequence_20              1.0000     10  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/Spic_top_20_sequences.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/Meme_of_top_20_Seeds 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=       20    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             186    N=              20
+sample: seed=            0    hsfrac=          0
+        searchsize=    186    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.259 C 0.241 G 0.241 T 0.259 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.259 C 0.241 G 0.241 T 0.259 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF GVGGAAGT MEME-1	width =   8  sites =  18  llr = 152  E-value = 5.7e-038
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  13::aa::
+pos.-specific     C  13::::::
+probability       G  62aa::a:
+matrix            T  11:::::a
+
+         bits    2.1   **    
+                 1.8   **** *
+                 1.6   ******
+                 1.4   ******
+Relative         1.2   ******
+Entropy          1.0   ******
+(12.2 bits)      0.8   ******
+                 0.6   ******
+                 0.4 * ******
+                 0.2 * ******
+                 0.0 --------
+
+Multilevel           GAGGAAGT
+consensus             C      
+sequence              G      
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+sequence_4                   -      1  1.41e-05          . GCGGAAGT           
+sequence_10                  -      1  2.93e-05          . GAGGAAGT           
+sequence_18                  -      1  4.34e-05          . GGGGAAGT           
+sequence_15                  -      1  4.34e-05          G GNGGAAGT           
+sequence_14                  -      2  4.34e-05          . GNGGAAGT G         
+sequence_11                  +      1  4.34e-05          . G.GGAAGT A         
+sequence_6                   +      1  4.34e-05          . G.GGAAGT .A        
+sequence_3                   -      1  4.34e-05          A GNGGAAGT           
+sequence_17                  -      1  5.86e-05         AT NNGGAAGT           
+sequence_16                  -      1  5.86e-05         TT NNGGAAGT           
+sequence_13                  +      3  5.86e-05         A. .AGGAAGT           
+sequence_12                  +      2  5.86e-05          A ..GGAAGT A         
+sequence_9                   +      3  5.86e-05         A. .GGGAAGT           
+sequence_8                   +      2  5.86e-05          A .AGGAAGT           
+sequence_5                   +      2  5.86e-05          A .CGGAAGT           
+sequence_2                   +      3  5.86e-05         A. .CGGAAGT           
+sequence_1                   +      3  5.86e-05         AA ..GGAAGT           
+sequence_19                  -      1  2.43e-04         AA GNGGAANT           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_4                        1.4e-05  [-1]
+sequence_10                       2.9e-05  [-1]
+sequence_18                       4.3e-05  [-1]
+sequence_15                       4.3e-05  [-1]_1
+sequence_14                       4.3e-05  1_[-1]
+sequence_11                       4.3e-05  [+1]_1
+sequence_6                        4.3e-05  [+1]_2
+sequence_3                        4.3e-05  [-1]_1
+sequence_17                       5.9e-05  [-1]_2
+sequence_16                       5.9e-05  [-1]_2
+sequence_13                       5.9e-05  2_[+1]
+sequence_12                       5.9e-05  1_[+1]_1
+sequence_9                        5.9e-05  2_[+1]
+sequence_8                        5.9e-05  1_[+1]
+sequence_5                        5.9e-05  1_[+1]
+sequence_2                        5.9e-05  2_[+1]
+sequence_1                        5.9e-05  2_[+1]
+sequence_19                       0.00024  [-1]_2
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF GVGGAAGT width=8 seqs=18
+sequence_4               (    1) GCGGAAGT  1 
+sequence_10              (    1) GAGGAAGT  1 
+sequence_18              (    1) GGGGAAGT  1 
+sequence_15              (    1) GNGGAAGT  1 
+sequence_14              (    2) GNGGAAGT  1 
+sequence_11              (    1) GNGGAAGT  1 
+sequence_6               (    1) GNGGAAGT  1 
+sequence_3               (    1) GNGGAAGT  1 
+sequence_17              (    1) NNGGAAGT  1 
+sequence_16              (    1) NNGGAAGT  1 
+sequence_13              (    3) NAGGAAGT  1 
+sequence_12              (    2) NNGGAAGT  1 
+sequence_9               (    3) NGGGAAGT  1 
+sequence_8               (    2) NAGGAAGT  1 
+sequence_5               (    2) NCGGAAGT  1 
+sequence_2               (    3) NCGGAAGT  1 
+sequence_1               (    3) NNGGAAGT  1 
+sequence_19              (    1) GNGGAANT  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 20 bayes= 1.50901 E= 5.7e-038 
+  -100   -100    137   -100 
+    26     32      2    -85 
+ -1081  -1081    205  -1081 
+ -1081  -1081    205  -1081 
+   195  -1081  -1081  -1081 
+   195  -1081  -1081  -1081 
+  -416   -416    199   -416 
+ -1081  -1081  -1081    195 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 18 E= 5.7e-038 
+ 0.129700  0.120300  0.620300  0.129700 
+ 0.310778  0.300333  0.244778  0.144111 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.014411  0.013367  0.957811  0.014411 
+ 0.000000  0.000000  0.000000  1.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif GVGGAAGT MEME-1 regular expression
+--------------------------------------------------------------------------------
+G[ACG]GGAAGT
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.35 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_1                       3.52e-04  2_[+1(5.86e-05)]
+sequence_2                       3.52e-04  2_[+1(5.86e-05)]
+sequence_3                       1.74e-04  [-1(4.34e-05)]_1
+sequence_4                       2.82e-05  [-1(1.41e-05)]
+sequence_5                       2.34e-04  1_[+1(5.86e-05)]
+sequence_6                       2.61e-04  [+1(4.34e-05)]_2
+sequence_7                       5.37e-01  8
+sequence_8                       2.34e-04  1_[+1(5.86e-05)]
+sequence_9                       3.52e-04  2_[+1(5.86e-05)]
+sequence_10                      5.86e-05  [-1(2.93e-05)]
+sequence_11                      1.74e-04  [+1(4.34e-05)]_1
+sequence_12                      3.52e-04  1_[+1(5.86e-05)]_1
+sequence_13                      3.52e-04  2_[+1(5.86e-05)]
+sequence_14                      1.74e-04  1_[-1(4.34e-05)]
+sequence_15                      1.74e-04  [-1(4.34e-05)]_1
+sequence_16                      3.52e-04  [-1(5.86e-05)]_2
+sequence_17                      3.52e-04  [-1(5.86e-05)]_2
+sequence_18                      8.69e-05  [-1(4.34e-05)]
+sequence_19                      1.46e-03  10
+sequence_20                      6.72e-01  10
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 3f3c4cf9c6e1
+
+********************************************************************************

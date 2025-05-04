@@ -1,0 +1,261 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/Etv4_top_20_sequences.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+sequence_1               1.0000      8  sequence_2               1.0000      8  
+sequence_3               1.0000      9  sequence_4               1.0000      9  
+sequence_5               1.0000      9  sequence_6               1.0000      8  
+sequence_7               1.0000      9  sequence_8               1.0000      8  
+sequence_9               1.0000      9  sequence_10              1.0000      8  
+sequence_11              1.0000      8  sequence_12              1.0000     10  
+sequence_13              1.0000     10  sequence_14              1.0000      9  
+sequence_15              1.0000      9  sequence_16              1.0000     10  
+sequence_17              1.0000     10  sequence_18              1.0000      8  
+sequence_19              1.0000      9  sequence_20              1.0000      9  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/Etv4_top_20_sequences.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/Meme_of_top_20_Seeds 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=       20    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             177    N=              20
+sample: seed=            0    hsfrac=          0
+        searchsize=    177    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.184 C 0.316 G 0.316 T 0.184 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.184 C 0.316 G 0.316 T 0.184 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF VYTTCCGG MEME-1	width =   8  sites =  18  llr = 97  E-value = 4.0e-016
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  413::::1
+pos.-specific     C  3513a7:1
+probability       G  411::3a7
+matrix            T  :367:::1
+
+         bits    2.4         
+                 2.2         
+                 2.0         
+                 1.7     * * 
+Relative         1.5    ** * 
+Entropy          1.2    ** * 
+(7.8 bits)       1.0   *** * 
+                 0.7   ***** 
+                 0.5  *******
+                 0.2 ********
+                 0.0 --------
+
+Multilevel           GCTTCCGG
+consensus            ATAC G  
+sequence             C       
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+sequence_2                   +      1  1.14e-05          . ATTTCCGG           
+sequence_11                  -      1  8.44e-05          . GCTTCCGG           
+sequence_5                   +      1  1.61e-04          . A.TTCCGG A         
+sequence_4                   +      1  1.61e-04          . A.TTCCGG T         
+sequence_18                  +      1  2.00e-04          . ACATCCGG           
+sequence_15                  +      2  2.00e-04          C .CTTCCGG           
+sequence_3                   -      2  2.00e-04          . ACTTCCGN T         
+sequence_7                   -      2  2.72e-04          . GNTTCCGG T         
+sequence_8                   -      1  3.96e-04          . GCATCCGG           
+sequence_13                  +      3  6.21e-04         C. .CATCCGG           
+sequence_19                  +      1  7.19e-04          . AC.TCCGG T         
+sequence_14                  -      2  1.24e-03          . GCNTCCGG T         
+sequence_17                  +      1  2.80e-03          . G..TCCGG AA        
+sequence_16                  -      3  5.39e-03          . CTTCCGGN NT        
+sequence_12                  +      1  5.39e-03          . CTTCCGG. .A        
+sequence_9                   +      1  5.39e-03          . CTTCCGG. C         
+sequence_1                   -      1  6.57e-03          . CTTCCGGT           
+sequence_20                  +      1  1.41e-02          . G.ACCGGA A         
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_2                        1.1e-05  [+1]
+sequence_11                       8.4e-05  [-1]
+sequence_5                        0.00016  [+1]_1
+sequence_4                        0.00016  [+1]_1
+sequence_18                        0.0002  [+1]
+sequence_15                        0.0002  1_[+1]
+sequence_3                         0.0002  1_[-1]
+sequence_7                        0.00027  1_[-1]
+sequence_8                         0.0004  [-1]
+sequence_13                       0.00062  2_[+1]
+sequence_19                       0.00072  [+1]_1
+sequence_14                        0.0012  1_[-1]
+sequence_17                        0.0028  [+1]_2
+sequence_16                        0.0054  2_[-1]
+sequence_12                        0.0054  [+1]_2
+sequence_9                         0.0054  [+1]_1
+sequence_1                         0.0066  [-1]
+sequence_20                         0.014  [+1]_1
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF VYTTCCGG width=8 seqs=18
+sequence_2               (    1) ATTTCCGG  1 
+sequence_11              (    1) GCTTCCGG  1 
+sequence_5               (    1) ANTTCCGG  1 
+sequence_4               (    1) ANTTCCGG  1 
+sequence_18              (    1) ACATCCGG  1 
+sequence_15              (    2) NCTTCCGG  1 
+sequence_3               (    2) ACTTCCGN  1 
+sequence_7               (    2) GNTTCCGG  1 
+sequence_8               (    1) GCATCCGG  1 
+sequence_13              (    3) NCATCCGG  1 
+sequence_19              (    1) ACNTCCGG  1 
+sequence_14              (    2) GCNTCCGG  1 
+sequence_17              (    1) GNNTCCGG  1 
+sequence_16              (    3) CTTCCGGN  1 
+sequence_12              (    1) CTTCCGGN  1 
+sequence_9               (    1) CTTCCGGN  1 
+sequence_1               (    1) CTTCCGGT  1 
+sequence_20              (    1) GNACCGGA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 20 bayes= 1.50901 E= 4.0e-016 
+    94    -29     22   -316 
+  -185     75   -185     83 
+    46   -258   -258    180 
+ -1081    -18  -1081    197 
+ -1081    166  -1081  -1081 
+ -1081    119    -18  -1081 
+ -1081  -1081    166  -1081 
+   -93   -217    122    -93 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 18 E= 4.0e-016 
+ 0.353822  0.257289  0.368400  0.020489 
+ 0.051222  0.532111  0.087667  0.329000 
+ 0.252956  0.052600  0.052600  0.641844 
+ 0.000000  0.277778  0.000000  0.722222 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  0.722222  0.277778  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.096533  0.070133  0.736800  0.096533 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VYTTCCGG MEME-1 regular expression
+--------------------------------------------------------------------------------
+[GAC][CT][TA][TC]C[CG]GG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.31 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_1                       1.31e-02  8
+sequence_2                       2.29e-05  [+1(1.14e-05)]
+sequence_3                       7.99e-04  9
+sequence_4                       6.42e-04  9
+sequence_5                       6.42e-04  9
+sequence_6                       8.32e-01  8
+sequence_7                       1.09e-03  9
+sequence_8                       7.92e-04  8
+sequence_9                       2.14e-02  9
+sequence_10                      7.84e-01  8
+sequence_11                      1.69e-04  [-1(8.44e-05)]
+sequence_12                      3.19e-02  10
+sequence_13                      3.72e-03  10
+sequence_14                      4.96e-03  9
+sequence_15                      7.99e-04  9
+sequence_16                      3.19e-02  10
+sequence_17                      1.67e-02  10
+sequence_18                      4.00e-04  8
+sequence_19                      2.87e-03  9
+sequence_20                      5.53e-02  9
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: f99ceeae8cf7
+
+********************************************************************************

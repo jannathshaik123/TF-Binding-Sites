@@ -1,0 +1,141 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/Elf2_consensus.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/Elf2_consensus.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/Elf2_consensus 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=    20013    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=          200128    N=           20013
+sample: seed=            0    hsfrac=          0
+        searchsize= 100000    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.248 C 0.252 G 0.252 T 0.248 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.248 C 0.252 G 0.252 T 0.248 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF NDHCCGGAA MEME-1	width =   9  sites = 19494  llr = 45170  E-value = 1.8e-296
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif NDHCCGGAA MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  233221176
+pos.-specific     C  222551111
+probability       G  222218711
+matrix            T  433211112
+
+         bits    2.0          
+                 1.8          
+                 1.6          
+                 1.4          
+Relative         1.2          
+Entropy          1.0          
+(3.3 bits)       0.8      **  
+                 0.6      *** 
+                 0.4     *****
+                 0.2    ******
+                 0.0 ---------
+
+Multilevel           TTTCCGGAA
+consensus            CAA A    
+sequence             A C      
+                              
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif NDHCCGGAA MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 9 n= 2 bayes= -664.386 E= 1.8e-296 
+   -27    -27    -36     65 
+    36    -66    -44     44 
+    11    -19    -60     48 
+   -33     88    -48    -65 
+    -9    109   -120   -106 
+  -170   -214    163   -151 
+  -154   -163    154   -134 
+   148   -154   -113   -119 
+   130   -121   -104    -63 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif NDHCCGGAA MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 9 nsites= 19494 E= 1.8e-296 
+ 0.205507  0.208825  0.195847  0.389820 
+ 0.317462  0.159429  0.186001  0.337109 
+ 0.267175  0.220411  0.166702  0.345712 
+ 0.197330  0.463925  0.181222  0.157523 
+ 0.233305  0.537984  0.109749  0.118962 
+ 0.076229  0.057222  0.779701  0.086848 
+ 0.085516  0.081433  0.734865  0.098186 
+ 0.689941  0.086837  0.114845  0.108377 
+ 0.608704  0.108902  0.122290  0.160104 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif NDHCCGGAA MEME-1 regular expression
+--------------------------------------------------------------------------------
+[TCA][TA][TAC]C[CA]GGAA
+--------------------------------------------------------------------------------
+
+
+
+
+Time 50.01 secs.
+
+********************************************************************************
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 87319f9a64e6
+
+********************************************************************************
