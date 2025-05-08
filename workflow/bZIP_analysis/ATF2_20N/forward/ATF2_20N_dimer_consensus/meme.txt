@@ -1,0 +1,141 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/ATF2_20N_dimer_consensus.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/ATF2_20N_dimer_consensus.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/ATF2_20N_dimer_consensus 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=   524801    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=        15744009    N=          524801
+sample: seed=            0    hsfrac=          0
+        searchsize= 100000    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.25 C 0.25 G 0.25 T 0.25 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.25 C 0.25 G 0.25 T 0.25 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AANMMNNNW MEME-1	width =   9  sites = 524801  llr = 436082  E-value = 3.6e+008
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AANMMNNNW MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  754443333
+pos.-specific     C  122222221
+probability       G  122222221
+matrix            T  122222334
+
+         bits    2.0          
+                 1.8          
+                 1.6          
+                 1.4          
+Relative         1.2          
+Entropy          1.0          
+(1.2 bits)       0.8          
+                 0.6 *        
+                 0.4 *        
+                 0.2 **      *
+                 0.0 ---------
+
+Multilevel           AAAAAATAT
+consensus              TCCTATA
+sequence               C  CGG 
+                          GC  
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AANMMNNNW MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 9 n= 1049600 bayes= 3.1699 E= 3.6e+008 
+   143   -133   -140    -90 
+    95    -44    -60    -58 
+    58    -30    -37    -13 
+    71    -13    -42    -51 
+    67    -10    -36    -51 
+    40    -17    -24     -8 
+    10    -31    -16     30 
+    37    -38    -30     17 
+    32    -79    -76     66 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AANMMNNNW MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 9 nsites= 524801 E= 3.6e+008 
+ 0.671568  0.099482  0.094824  0.134126 
+ 0.483080  0.184227  0.164971  0.167722 
+ 0.374337  0.203074  0.193558  0.229032 
+ 0.410145  0.227692  0.186301  0.175862 
+ 0.396869  0.232976  0.194846  0.175309 
+ 0.329913  0.221476  0.211865  0.236746 
+ 0.267079  0.201761  0.224005  0.307155 
+ 0.322944  0.192092  0.203354  0.281610 
+ 0.312994  0.144656  0.147301  0.395050 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AANMMNNNW MEME-1 regular expression
+--------------------------------------------------------------------------------
+AA[ATC][AC][AC][ATCG][TAGC][ATG][TA]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 299.33 secs.
+
+********************************************************************************
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 72d3d1320314
+
+********************************************************************************
