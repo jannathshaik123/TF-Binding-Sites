@@ -234,20 +234,19 @@ def process_dimer(file_path, top_n=50, max_spacing=5, output_dir=None):
         print(f"Error processing dimer {file_path}: {e}")
         return False
 
+
 def process_directory(directory_path, file_type="auto", pattern=None):
     """Process all files in a directory based on specified criteria."""
     success_count = 0
     failure_count = 0
-    monomer_pattern = "_8mers_"
+    monomer_pattern = "_8mers_top_enrichment"
     dimer_pattern = ".10mer"
-    
-    # Override pattern if specified
     if pattern:
         monomer_pattern = pattern if file_type == "monomer" else monomer_pattern
         dimer_pattern = pattern if file_type == "dimer" else dimer_pattern
     
     
-    for root, subfiles, files in os.walk(directory_path):
+    for root, _, files in os.walk(directory_path):
         
         for file in files:
             file_path = os.path.join(root, file)
@@ -255,8 +254,6 @@ def process_directory(directory_path, file_type="auto", pattern=None):
                 continue
             is_monomer = monomer_pattern in file
             is_dimer = dimer_pattern in file
-            
-            # Auto-detect or use specified file type
             if file_type == "auto":
                 if is_monomer:
                     print(f"Found monomer file: {file_path}")
