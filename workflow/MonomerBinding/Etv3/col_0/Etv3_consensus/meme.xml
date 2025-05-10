@@ -246,7 +246,7 @@
 </background_frequencies>
 </model>
 <motifs>
-<motif id="motif_1" name="HCGGAADN" alt="MEME-1" width="8" sites="9830" ic="2.0" re="2.0" llr="13542" p_value="1.8e-523" e_value="2.0e-222" bayes_threshold="-664.386" elapsed_time="48.105559">
+<motif id="motif_1" name="HCGGAADN" alt="MEME-1" width="8" sites="9830" ic="2.0" re="2.0" llr="13542" p_value="1.8e-523" e_value="2.0e-222" bayes_threshold="-664.386" elapsed_time="56.049205">
 <scores>
 <alphabet_matrix>
 <alphabet_array>

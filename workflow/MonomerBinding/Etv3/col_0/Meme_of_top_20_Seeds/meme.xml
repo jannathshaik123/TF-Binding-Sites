@@ -192,26 +192,26 @@
 <letter id="Y" symbol="Y" equals="CT" name="Pyrimidine"/>
 <letter id="K" symbol="K" equals="GT" name="Keto"/>
 </alphabet>
-<sequence id="sequence_0" name="sequence_1" length="8" weight="1.000000" />
-<sequence id="sequence_1" name="sequence_2" length="9" weight="1.000000" />
-<sequence id="sequence_2" name="sequence_3" length="8" weight="1.000000" />
-<sequence id="sequence_3" name="sequence_4" length="9" weight="1.000000" />
-<sequence id="sequence_4" name="sequence_5" length="8" weight="1.000000" />
-<sequence id="sequence_5" name="sequence_6" length="9" weight="1.000000" />
-<sequence id="sequence_6" name="sequence_7" length="8" weight="1.000000" />
-<sequence id="sequence_7" name="sequence_8" length="10" weight="1.000000" />
-<sequence id="sequence_8" name="sequence_9" length="8" weight="1.000000" />
-<sequence id="sequence_9" name="sequence_10" length="10" weight="1.000000" />
-<sequence id="sequence_10" name="sequence_11" length="10" weight="1.000000" />
-<sequence id="sequence_11" name="sequence_12" length="9" weight="1.000000" />
-<sequence id="sequence_12" name="sequence_13" length="9" weight="1.000000" />
-<sequence id="sequence_13" name="sequence_14" length="10" weight="1.000000" />
-<sequence id="sequence_14" name="sequence_15" length="9" weight="1.000000" />
-<sequence id="sequence_15" name="sequence_16" length="9" weight="1.000000" />
-<sequence id="sequence_16" name="sequence_17" length="10" weight="1.000000" />
-<sequence id="sequence_17" name="sequence_18" length="9" weight="1.000000" />
-<sequence id="sequence_18" name="sequence_19" length="9" weight="1.000000" />
-<sequence id="sequence_19" name="sequence_20" length="10" weight="1.000000" />
+<sequence id="sequence_0" name="sequence_1|score=0.4903" length="8" weight="1.000000" />
+<sequence id="sequence_1" name="sequence_2|score=0.4901" length="9" weight="1.000000" />
+<sequence id="sequence_2" name="sequence_3|score=0.4896" length="8" weight="1.000000" />
+<sequence id="sequence_3" name="sequence_4|score=0.4894" length="9" weight="1.000000" />
+<sequence id="sequence_4" name="sequence_5|score=0.4894" length="8" weight="1.000000" />
+<sequence id="sequence_5" name="sequence_6|score=0.4892" length="9" weight="1.000000" />
+<sequence id="sequence_6" name="sequence_7|score=0.4883" length="8" weight="1.000000" />
+<sequence id="sequence_7" name="sequence_8|score=0.4878" length="10" weight="1.000000" />
+<sequence id="sequence_8" name="sequence_9|score=0.4871" length="8" weight="1.000000" />
+<sequence id="sequence_9" name="sequence_10|score=0.4869" length="10" weight="1.000000" />
+<sequence id="sequence_10" name="sequence_11|score=0.4866" length="10" weight="1.000000" />
+<sequence id="sequence_11" name="sequence_12|score=0.4858" length="9" weight="1.000000" />
+<sequence id="sequence_12" name="sequence_13|score=0.4856" length="9" weight="1.000000" />
+<sequence id="sequence_13" name="sequence_14|score=0.4855" length="10" weight="1.000000" />
+<sequence id="sequence_14" name="sequence_15|score=0.4851" length="9" weight="1.000000" />
+<sequence id="sequence_15" name="sequence_16|score=0.4851" length="9" weight="1.000000" />
+<sequence id="sequence_16" name="sequence_17|score=0.4850" length="10" weight="1.000000" />
+<sequence id="sequence_17" name="sequence_18|score=0.4848" length="9" weight="1.000000" />
+<sequence id="sequence_18" name="sequence_19|score=0.4847" length="9" weight="1.000000" />
+<sequence id="sequence_19" name="sequence_20|score=0.4845" length="10" weight="1.000000" />
 <letter_frequencies>
 <alphabet_array>
 <value letter_id="A">0.222</value>
@@ -266,7 +266,7 @@
 </background_frequencies>
 </model>
 <motifs>
-<motif id="motif_1" name="CCGGAART" alt="MEME-1" width="8" sites="17" ic="9.1" re="8.9" llr="105" p_value="2.3e-032" e_value="1.3e-018" bayes_threshold="-2.09192" elapsed_time="0.300416">
+<motif id="motif_1" name="CCGGAART" alt="MEME-1" width="8" sites="17" ic="9.1" re="8.9" llr="105" p_value="2.3e-032" e_value="1.3e-018" bayes_threshold="-2.09192" elapsed_time="0.403918">
 <scores>
 <alphabet_matrix>
 <alphabet_array>

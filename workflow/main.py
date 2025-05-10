@@ -171,7 +171,7 @@ def process_dimer(file_path, top_n=50, max_spacing=5, output_dir=None):
         os.makedirs(output_dir, exist_ok=True)
         print(f"Processing {dimer_type} {tf_name} from {file_path}")
         sequences, scores = read_bzip_sequences(file_path)
-            if not sequences:
+        if not sequences:
             print(f"No sequences found in {file_path}")
             return False
         
@@ -288,7 +288,7 @@ def process_tf_list(tf_list, file_type="monomer", col_index=0):
                 input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF Binding Factors\{tf}\{tf}_8mers_top_enrichment.txt')
                 process_monomer(input_file_path, col_index=col_index)
             elif file_type == "dimer":
-                input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF_Dimer\{tf}\{tf}.10mer.txt')
+                input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF_Dimer\{tf}.10mer.txt')
                 process_dimer(input_file_path)
         except Exception as e:
             print(f"Error processing {tf}: {e}")
