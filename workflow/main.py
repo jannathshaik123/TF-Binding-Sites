@@ -10,12 +10,12 @@ from alignment_utils import align_sequence
 
 # Import utilities for dimer processing
 from dimer_alignment_utils import generate_sorted_substrings as generate_sorted_substrings_dimer
-from dimer_alignment_utils import align_dimer_sequences_parallel, find_dimer_motifs
+from dimer_alignment_utils import align_dimer_sequences_parallel
 
 
 from using_meme import meme_analysis
 from fasta_converter import fasta_format_converter
-from seed_finder import get_top_sequences, seed_meme_analysis, read_html_pwm, calculate_consensus
+from seed_finder import get_top_sequences, seed_meme_analysis, read_html_pwm, calculate_consensus, find_dimer_motifs
 
 def read_sequences_from_fasta_file(file_path, col_index=0):
     """Read sequences from a FASTA file."""

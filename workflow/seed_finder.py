@@ -93,7 +93,64 @@ def read_html_pwm(file_path):
     return pwm_section
 
 
-# html_file = "/Users/bristi/Desktop/Design Project/Working-with-TF/Finding_A_Seed/FOS_CEBPE/Meme_of_top_20_Seeds/meme.html" #Path to your meme output file
-# pwm_section = read_html_pwm(html_file)
-# consensus_sequence = calculate_consensus(pwm_section)
-# print(consensus_sequence)
+def find_dimer_motifs(sequences, min_length=4, max_length=6, max_spacing=5):
+    """
+    Try to identify two motifs in a set of sequences.
+    This is a simplified approach - for real applications, you might want to use
+    more sophisticated motif finding algorithms.
+    """
+    # Convert sequences to a position frequency matrix
+    seq_length = len(sequences[0])
+    matrix = np.zeros((4, seq_length))  # A, C, G, T
+    base_to_idx = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
+    
+    for seq in sequences:
+        for i, base in enumerate(seq):
+            if base in base_to_idx:
+                matrix[base_to_idx[base], i] += 1
+    
+    for j in range(seq_length):
+        col_sum = sum(matrix[:, j])
+        if col_sum > 0:
+            matrix[:, j] /= col_sum
+    
+    
+    information_content = np.zeros(seq_length)
+    for j in range(seq_length):
+        for i in range(4):
+            p = matrix[i, j]
+            if p > 0:
+                information_content[j] -= p * np.log2(p)
+    
+    motif_regions = []
+    current_region = []
+    threshold = np.mean(information_content) - 0.5 * np.std(information_content)
+    for i, ic in enumerate(information_content):
+        if ic < threshold:  # Lower information content means more conservation
+            current_region.append(i)
+        else:
+            if len(current_region) >= min_length:
+                motif_regions.append(current_region)
+            current_region = []
+    
+    if current_region and len(current_region) >= min_length:
+        motif_regions.append(current_region)
+    if len(motif_regions) < 2:
+        # Not enough motifs found
+        return None, None
+    motif_regions.sort(key=len, reverse=True)
+    motif_regions = motif_regions[:2]
+    motif_regions.sort(key=lambda x: x[0])
+    motifs = []
+    for region in motif_regions:
+        consensus = ""
+        for pos in region:
+            idx = np.argmax(matrix[:, pos])
+            base = "ACGT"[idx]
+            consensus += base
+        motifs.append(consensus)
+    
+    if len(motifs) == 2:
+        return motifs[0], motifs[1]
+    else:
+        return None, None
