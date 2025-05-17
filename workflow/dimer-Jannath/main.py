@@ -8,9 +8,9 @@ import argparse
 from alignment_utils import generate_sorted_substrings as generate_sorted_substrings_monomer
 from alignment_utils import align_sequence
 
-# Import utilities for dimer processing
-from dimer_alignment_utils import generate_sorted_substrings as generate_sorted_substrings_dimer
-from dimer_alignment_utils import align_dimer_sequences_parallel
+# # Import utilities for dimer processing
+# from dimer_alignment_utils import generate_sorted_substrings as generate_sorted_substrings_dimer
+# from dimer_alignment_utils import align_dimer_sequences_parallel
 
 
 from using_meme import meme_analysis
@@ -97,16 +97,19 @@ def process_monomer(file_path, col_index=0, top_n=20, output_dir=None):
     - output_dir: Directory to save output files (default: based on filename)
     """
     try:
-        tf_name = os.path.basename(file_path).split('_')[0]
+        # Extract TF name from filename
+        tf_name = extract_tf_names(file_path)
+        dimer_type = "heterodimer" if is_heterodimer(file_path) else "homodimer"
         if output_dir is None:
-            output_dir = f"MonomerBinding/{tf_name}/col_{col_index}"
+            output_dir = f"DimerBinding/{tf_name}"
         os.makedirs(output_dir, exist_ok=True)
-        print(f"Processing monomer {tf_name} from {file_path}")
+        print(f"Processing {dimer_type} {tf_name} from {file_path}")
         
-        sequences, scores = read_sequences_from_file(file_path, col_index)
+        sequences, scores = read_bzip_sequences(file_path)
         if not sequences:
             print(f"No sequences found in {file_path}")
             return False
+        
         top_sequences = get_top_sequences(sequences, scores, top_n=top_n)
         output_fasta_file = os.path.join(output_dir, f'{tf_name}_top_{top_n}_sequences.fasta')
         write_sequences_to_fasta([seq for seq, _ in top_sequences], 
@@ -152,87 +155,87 @@ def process_monomer(file_path, col_index=0, top_n=20, output_dir=None):
         print(f"Error processing monomer {file_path}: {e}")
         return False
 
-def process_dimer(file_path, top_n=50, max_spacing=5, output_dir=None):
-    """
-    Process bZIP dimer binding data
+# def process_dimer(file_path, top_n=50, max_spacing=5, output_dir=None):
+#     """
+#     Process bZIP dimer binding data
     
-    Parameters:
-    - file_path: Path to the bZIP 10mer file
-    - top_n: Number of top sequences to use for motif discovery
-    - max_spacing: Maximum spacing between dimer motifs
-    - output_dir: Directory to save output files (default: based on filename)
-    """
-    try:
-        # Extract TF name from filename
-        tf_name = extract_tf_names(file_path)
-        dimer_type = "heterodimer" if is_heterodimer(file_path) else "homodimer"
-        if output_dir is None:
-            output_dir = f"DimerBinding/{tf_name}"
-        os.makedirs(output_dir, exist_ok=True)
-        print(f"Processing {dimer_type} {tf_name} from {file_path}")
-        sequences, scores = read_bzip_sequences(file_path)
-        if not sequences:
-            print(f"No sequences found in {file_path}")
-            return False
+#     Parameters:
+#     - file_path: Path to the bZIP 10mer file
+#     - top_n: Number of top sequences to use for motif discovery
+#     - max_spacing: Maximum spacing between dimer motifs
+#     - output_dir: Directory to save output files (default: based on filename)
+#     """
+#     try:
+#         # Extract TF name from filename
+#         tf_name = extract_tf_names(file_path)
+#         dimer_type = "heterodimer" if is_heterodimer(file_path) else "homodimer"
+#         if output_dir is None:
+#             output_dir = f"DimerBinding/{tf_name}"
+#         os.makedirs(output_dir, exist_ok=True)
+#         print(f"Processing {dimer_type} {tf_name} from {file_path}")
+#         sequences, scores = read_bzip_sequences(file_path)
+#         if not sequences:
+#             print(f"No sequences found in {file_path}")
+#             return False
         
-        combined = list(zip(sequences, scores))
-        sorted_combined = sorted(combined, key=lambda x: x[1], reverse=True)
-        top_sequences = sorted_combined[:top_n]
-        top_fasta_file = os.path.join(output_dir, f"{tf_name}_top_{top_n}.fasta")
-        write_sequences_to_fasta([seq for seq, _ in top_sequences], 
-                                [score for _, score in top_sequences], 
-                                top_fasta_file)
+#         combined = list(zip(sequences, scores))
+#         sorted_combined = sorted(combined, key=lambda x: x[1], reverse=True)
+#         top_sequences = sorted_combined[:top_n]
+#         top_fasta_file = os.path.join(output_dir, f"{tf_name}_top_{top_n}.fasta")
+#         write_sequences_to_fasta([seq for seq, _ in top_sequences], 
+#                                 [score for _, score in top_sequences], 
+#                                 top_fasta_file)
         
-        top_sequence_list = [seq for seq, _ in top_sequences]
-        print(f"Identifying motifs for {tf_name}")
-        # motif1, motif2 = find_dimer_motifs(top_sequence_list, max_spacing=max_spacing)
-        # if not motif1 or not motif2:
-        # print(f"Automatic motif detection failed, using MEME for {tf_name}")
-        seed_meme_analysis(top_fasta_file, 0, top_n)
-        html_file = os.path.join(output_dir, f"Meme_of_top_{top_n}_Seeds/meme.html")
+#         top_sequence_list = [seq for seq, _ in top_sequences]
+#         print(f"Identifying motifs for {tf_name}")
+#         # motif1, motif2 = find_dimer_motifs(top_sequence_list, max_spacing=max_spacing)
+#         # if not motif1 or not motif2:
+#         # print(f"Automatic motif detection failed, using MEME for {tf_name}")
+#         seed_meme_analysis(top_fasta_file, 0, top_n)
+#         html_file = os.path.join(output_dir, f"Meme_of_top_{top_n}_Seeds/meme.html")
         
-        if os.path.exists(html_file):
-            pwm_section = read_html_pwm(html_file)
-            consensus = calculate_consensus(pwm_section)
-            motif_length = len(consensus) // 2
-            motif1 = consensus[:motif_length]
-            motif2 = consensus[motif_length:]
-            print(f"Potential motifs from MEME: {motif1} and {motif2}")
-        else:
-            print(f"MEME HTML file not found at {html_file}, using default motifs")
-            motif1 = top_sequence_list[0][:5] 
-            motif2 = top_sequence_list[0][-5:]
-        print(f"Using motifs: {motif1} and {motif2} for {tf_name}")
+#         if os.path.exists(html_file):
+#             pwm_section = read_html_pwm(html_file)
+#             consensus = calculate_consensus(pwm_section)
+#             motif_length = len(consensus) // 2
+#             motif1 = consensus[:motif_length]
+#             motif2 = consensus[motif_length:]
+#             print(f"Potential motifs from MEME: {motif1} and {motif2}")
+#         else:
+#             print(f"MEME HTML file not found at {html_file}, using default motifs")
+#             motif1 = top_sequence_list[0][:5] 
+#             motif2 = top_sequence_list[0][-5:]
+#         print(f"Using motifs: {motif1} and {motif2} for {tf_name}")
         
-        # Align all sequences using our dimer alignment method
-        print(f"Aligning sequences for {tf_name}")
-        df_aligned = align_dimer_sequences_parallel(sequences, motif1, motif2, max_spacing)
-        output_csv_path = os.path.join(output_dir, f"{tf_name}_dimer_alignment.csv")
-        df_aligned.to_csv(output_csv_path, index=False)
-        print(f"Alignment data written to {output_csv_path}")
+#         # Align all sequences using our dimer alignment method
+#         print(f"Aligning sequences for {tf_name}")
+#         df_aligned = align_dimer_sequences_parallel(sequences, motif1, motif2, max_spacing)
+#         output_csv_path = os.path.join(output_dir, f"{tf_name}_dimer_alignment.csv")
+#         df_aligned.to_csv(output_csv_path, index=False)
+#         print(f"Alignment data written to {output_csv_path}")
         
-        seq_length = len(sequences[0])
-        lower_bound = -seq_length
-        upper_bound = 2 * seq_length
+#         seq_length = len(sequences[0])
+#         lower_bound = -seq_length
+#         upper_bound = 2 * seq_length
         
-        available_cols = [col for col in df_aligned.columns if lower_bound <= col < upper_bound]
-        extracted_data = df_aligned[available_cols]
-        formatted_data = extracted_data.apply(lambda row: ''.join(row.astype(str)), axis=1)
-        output_file_path = os.path.join(output_dir, f"{tf_name}_dimer_consensus.txt")
-        with open(output_file_path, 'w') as file:
-            file.write(f"{motif1}-{motif2}\n")  # Write motifs as reference
-            for line in formatted_data:
-                file.write(line.replace('-', 'N') + '\n')
-        print(f"Formatted data written to {output_file_path}")
-        output_fasta_path = os.path.join(output_dir, f"{tf_name}_dimer_consensus.fasta")
-        fasta_format_converter(output_file_path, output_fasta_path)
-        meme_analysis(output_fasta_path, seq_length)
+#         available_cols = [col for col in df_aligned.columns if lower_bound <= col < upper_bound]
+#         extracted_data = df_aligned[available_cols]
+#         formatted_data = extracted_data.apply(lambda row: ''.join(row.astype(str)), axis=1)
+#         output_file_path = os.path.join(output_dir, f"{tf_name}_dimer_consensus.txt")
+#         with open(output_file_path, 'w') as file:
+#             file.write(f"{motif1}-{motif2}\n")  # Write motifs as reference
+#             for line in formatted_data:
+#                 file.write(line.replace('-', 'N') + '\n')
+#         print(f"Formatted data written to {output_file_path}")
+#         output_fasta_path = os.path.join(output_dir, f"{tf_name}_dimer_consensus.fasta")
+#         fasta_format_converter(output_file_path, output_fasta_path)
+#         meme_analysis(output_fasta_path, seq_length)
         
-        return True
+#         return True
     
-    except Exception as e:
-        print(f"Error processing dimer {file_path}: {e}")
-        return False
+#     except Exception as e:
+#         print(f"Error processing dimer {file_path}: {e}")
+#         return False
 
 
 def process_directory(directory_path, file_type="auto", pattern=None):
@@ -287,9 +290,9 @@ def process_tf_list(tf_list, file_type="monomer", col_index=0):
             if file_type == "monomer":
                 input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF Binding Factors\{tf}\{tf}_8mers_top_enrichment.txt')
                 process_monomer(input_file_path, col_index=col_index)
-            elif file_type == "dimer":
-                input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF_Dimer\{tf}.10mer.txt')
-                process_dimer(input_file_path)
+            # # elif file_type == "dimer":
+            #     input_file_path = os.path.join(os.path.dirname(os.getcwd()),f'TF_Dimer\{tf}.10mer.txt')
+            #     process_dimer(input_file_path)
         except Exception as e:
             print(f"Error processing {tf}: {e}")
             continue
@@ -324,8 +327,8 @@ if __name__ == "__main__":
                 process_monomer(args.file, col_index=args.col, top_n=args.top)
         elif args.type == "monomer":
             process_monomer(args.file, col_index=args.col, top_n=args.top)
-        elif args.type == "dimer":
-            process_dimer(args.file, top_n=args.top, max_spacing=args.spacing)
+        # elif args.type == "dimer":
+        #     process_dimer(args.file, top_n=args.top, max_spacing=args.spacing)
     elif args.dir:
         process_directory(args.dir, file_type=args.type, pattern=args.pattern)
     elif args.tf_list:
