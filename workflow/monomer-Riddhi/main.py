@@ -101,6 +101,6 @@ if __name__ == "__main__":
 
             print(f"Data written to {output_file_path}")
                     
-            # sequence_logo_generator(TF,output_file_path,col_index)
+            sequence_logo_generator(TF,output_file_path,col_index)
             fasta_format_converter(output_file_path, output_fasta_path)
             meme_analysis(output_fasta_path, length_of_sequence)

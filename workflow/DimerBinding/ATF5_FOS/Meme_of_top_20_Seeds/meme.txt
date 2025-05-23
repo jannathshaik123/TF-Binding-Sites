@@ -1,0 +1,264 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.7 (Release date: Wed Jun 19 13:59:04 2024 -0700)
+
+For further information on how to interpret these results please access http://localhost:8080/meme_5.5.7.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /data/ATF5_FOS_top_20_sequences.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+sequence_1|score=60.1018 1.0000     10  sequence_2|score=51.7026 1.0000     10  
+sequence_3|score=25.7690 1.0000     10  sequence_4|score=19.5389 1.0000     10  
+sequence_5|score=18.4963 1.0000     10  sequence_6|score=13.3462 1.0000     10  
+sequence_7|score=13.2322 1.0000     10  sequence_8|score=12.5755 1.0000     10  
+sequence_9|score=12.2212 1.0000     10  sequence_10|score=10.853 1.0000     10  
+sequence_11|score=10.333 1.0000     10  sequence_12|score=9.7919 1.0000     10  
+sequence_13|score=9.2424 1.0000     10  sequence_14|score=7.7106 1.0000     10  
+sequence_15|score=7.1042 1.0000     10  sequence_16|score=6.3562 1.0000     10  
+sequence_17|score=6.3083 1.0000     10  sequence_18|score=6.2202 1.0000     10  
+sequence_19|score=5.8675 1.0000     10  sequence_20|score=5.8253 1.0000     10  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /data/ATF5_FOS_top_20_sequences.fasta -dna -o -nostatus -maxw 10 -minw 8 -nmotifs 1 -mod zoops -objfun classic -revcomp -markov_order 0 -o /data/Meme_of_top_20_Seeds 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: + -
+width:  minw=            8    maxw=           10
+nsites: minsites=        2    maxsites=       20    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             200    N=              20
+sample: seed=            0    hsfrac=          0
+        searchsize=    200    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.253 C 0.247 G 0.247 T 0.253 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.253 C 0.247 G 0.247 T 0.253 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF ATGACGTC MEME-1	width =   8  sites =  19  llr = 166  E-value = 5.4e-041
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  8::8:2::
+pos.-specific     C  12::9::9
+probability       G  1:a::8::
+matrix            T  :8:21:a1
+
+         bits    2.0   *   * 
+                 1.8   * * **
+                 1.6   * * **
+                 1.4  *******
+Relative         1.2  *******
+Entropy          1.0 ********
+(12.6 bits)      0.8 ********
+                 0.6 ********
+                 0.4 ********
+                 0.2 ********
+                 0.0 --------
+
+Multilevel           ATGACGTC
+consensus                    
+sequence                     
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+sequence_19|score=5.8675     -      1  1.53e-05         GT ATGACGTC           
+sequence_14|score=7.7106     -      1  1.53e-05         GC ATGACGTC           
+sequence_12|score=9.7919     +      2  1.53e-05          T ATGACGTC A         
+sequence_9|score=12.2212     +      1  1.53e-05          . ATGACGTC AG        
+sequence_8|score=12.5755     +      2  1.53e-05          A ATGACGTC A         
+sequence_6|score=13.3462     +      2  1.53e-05          C ATGACGTC A         
+sequence_5|score=18.4963     +      1  1.53e-05          . ATGACGTC AC        
+sequence_4|score=19.5389     +      3  1.53e-05         AG ATGACGTC           
+sequence_3|score=25.7690     -      1  1.53e-05         GG ATGACGTC           
+sequence_2|score=51.7026     +      2  1.53e-05          G ATGACGTC A         
+sequence_1|score=60.1018     +      1  1.53e-05          . ATGACGTC AT        
+sequence_16|score=6.3562     -      1  9.10e-05         GG CTGACGTC           
+sequence_15|score=7.1042     +      2  9.10e-05          A GTGACGTC A         
+sequence_10|score=10.853     +      2  9.10e-05          G GTGACGTC A         
+sequence_7|score=13.2322     +      2  9.10e-05          G CTGACGTC A         
+sequence_17|score=6.3083     +      1  4.27e-04          . ACGTCATC CA        
+sequence_13|score=9.2424     -      3  4.27e-04          . ACGTCATC TT        
+sequence_11|score=10.333     +      1  4.27e-04          . ACGTCATC CT        
+sequence_18|score=6.2202     -      3  5.33e-04          . ATGATGTT CT        
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_19|score=5.8675          1.5e-05  [-1]_2
+sequence_14|score=7.7106          1.5e-05  [-1]_2
+sequence_12|score=9.7919          1.5e-05  1_[+1]_1
+sequence_9|score=12.2212          1.5e-05  [+1]_2
+sequence_8|score=12.5755          1.5e-05  1_[+1]_1
+sequence_6|score=13.3462          1.5e-05  1_[+1]_1
+sequence_5|score=18.4963          1.5e-05  [+1]_2
+sequence_4|score=19.5389          1.5e-05  2_[+1]
+sequence_3|score=25.7690          1.5e-05  [-1]_2
+sequence_2|score=51.7026          1.5e-05  1_[+1]_1
+sequence_1|score=60.1018          1.5e-05  [+1]_2
+sequence_16|score=6.3562          9.1e-05  [-1]_2
+sequence_15|score=7.1042          9.1e-05  1_[+1]_1
+sequence_10|score=10.853          9.1e-05  1_[+1]_1
+sequence_7|score=13.2322          9.1e-05  1_[+1]_1
+sequence_17|score=6.3083          0.00043  [+1]_2
+sequence_13|score=9.2424          0.00043  2_[-1]
+sequence_11|score=10.333          0.00043  [+1]_2
+sequence_18|score=6.2202          0.00053  2_[-1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF ATGACGTC width=8 seqs=19
+sequence_19|score=5.8675 (    1) ATGACGTC  1 
+sequence_14|score=7.7106 (    1) ATGACGTC  1 
+sequence_12|score=9.7919 (    2) ATGACGTC  1 
+sequence_9|score=12.2212 (    1) ATGACGTC  1 
+sequence_8|score=12.5755 (    2) ATGACGTC  1 
+sequence_6|score=13.3462 (    2) ATGACGTC  1 
+sequence_5|score=18.4963 (    1) ATGACGTC  1 
+sequence_4|score=19.5389 (    3) ATGACGTC  1 
+sequence_3|score=25.7690 (    1) ATGACGTC  1 
+sequence_2|score=51.7026 (    2) ATGACGTC  1 
+sequence_1|score=60.1018 (    1) ATGACGTC  1 
+sequence_16|score=6.3562 (    1) CTGACGTC  1 
+sequence_15|score=7.1042 (    2) GTGACGTC  1 
+sequence_10|score=10.853 (    2) GTGACGTC  1 
+sequence_7|score=13.2322 (    2) CTGACGTC  1 
+sequence_17|score=6.3083 (    1) ACGTCATC  1 
+sequence_13|score=9.2424 (    3) ACGTCATC  1 
+sequence_11|score=10.333 (    1) ACGTCATC  1 
+sequence_18|score=6.2202 (    3) ATGATGTT  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 60 bayes= 2.28758 E= 5.4e-041 
+   164   -123   -123  -1089 
+ -1089    -65  -1089    174 
+ -1089  -1089    201  -1089 
+   174  -1089  -1089    -68 
+ -1089    194  -1089   -226 
+   -68  -1089    177  -1089 
+ -1089  -1089  -1089    199 
+ -1089    194  -1089   -226 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 19 E= 5.4e-041 
+ 0.789474  0.105263  0.105263  0.000000 
+ 0.000000  0.157895  0.000000  0.842105 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.842105  0.000000  0.000000  0.157895 
+ 0.000000  0.947368  0.000000  0.052632 
+ 0.157895  0.000000  0.842105  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.947368  0.000000  0.052632 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATGACGTC MEME-1 regular expression
+--------------------------------------------------------------------------------
+ATGACGTC
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.28 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+sequence_1|score=60.1018         9.15e-05  [+1(1.53e-05)]_2
+sequence_2|score=51.7026         9.15e-05  1_[+1(1.53e-05)]_1
+sequence_3|score=25.7690         9.15e-05  [-1(1.53e-05)]_2
+sequence_4|score=19.5389         9.15e-05  2_[+1(1.53e-05)]
+sequence_5|score=18.4963         9.15e-05  [+1(1.53e-05)]_2
+sequence_6|score=13.3462         9.15e-05  1_[+1(1.53e-05)]_1
+sequence_7|score=13.2322         5.46e-04  1_[+1(9.10e-05)]_1
+sequence_8|score=12.5755         9.15e-05  1_[+1(1.53e-05)]_1
+sequence_9|score=12.2212         9.15e-05  [+1(1.53e-05)]_2
+sequence_10|score=10.853         5.46e-04  1_[+1(9.10e-05)]_1
+sequence_11|score=10.333         2.56e-03  10
+sequence_12|score=9.7919         9.15e-05  1_[+1(1.53e-05)]_1
+sequence_13|score=9.2424         2.56e-03  10
+sequence_14|score=7.7106         9.15e-05  [-1(1.53e-05)]_2
+sequence_15|score=7.1042         5.46e-04  1_[+1(9.10e-05)]_1
+sequence_16|score=6.3562         5.46e-04  [-1(9.10e-05)]_2
+sequence_17|score=6.3083         2.56e-03  10
+sequence_18|score=6.2202         3.19e-03  10
+sequence_19|score=5.8675         9.15e-05  [-1(1.53e-05)]_2
+sequence_20|score=5.8253         3.54e-01  10
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: cc2b7d1bf14a
+
+********************************************************************************
