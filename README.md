@@ -9,7 +9,6 @@ A comprehensive bioinformatics toolkit for identifying and analyzing anchor resi
 - [Installation](#-installation)
 - [File Structure](#-file-structure)
 - [Usage](#-usage)
-- [Methods](#-methods)
 - [BINGO Algorithm](#-bingo-algorithm)
 - [Requirements](#--requirements)
 - [Examples](#-examples)
