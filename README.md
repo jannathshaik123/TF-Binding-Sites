@@ -61,7 +61,7 @@ docker pull memesuite/memesuite:latest
 ```
 
 4. **Prepare your data**
-   - Place your UniProbe `*_8mers_top_enrichment.txt` files in the appropriate directory
+   - Place your UniProbe `*_8mers.txt` files in the appropriate directory
    - Ensure proper directory structure for TF data
 
 ## 📁 File Structure
