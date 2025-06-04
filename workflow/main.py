@@ -159,7 +159,7 @@ if __name__ == "__main__":
     
     # Set default top_n based on type
     if args.top is None:
-        args.top = 20 if args.type == "monomer" else 50
+        args.top = 20 
     
     if args.file:
         process_monomer(args.file, col_index=args.col, top_n=args.top)
