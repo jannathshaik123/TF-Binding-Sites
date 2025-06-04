@@ -45,7 +45,7 @@ The project implements three different methodologies, with the **BINGO Algorithm
 
 ```bash
 git clone https://github.com/jannathshaik123/TF-Binding-Sites
-cd workflow
+cd TF-Binding-Sites-main/workflow
 ```
 
 2. **Install Python dependencies**
