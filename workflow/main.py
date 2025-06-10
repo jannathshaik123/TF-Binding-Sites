@@ -123,7 +123,7 @@ def process_directory(directory_path, file_type="auto", pattern=None):
         
         for file in files:
             file_path = os.path.join(root, file)
-            if not (file.endswith(".txt") or file.endswith(".csv") or file.endswith(".tsv")):
+            if not (file.endswith("8mers.txt")):
                 continue
             print(f"Found monomer file: {file_path}")
             success = process_monomer(file_path)
