@@ -7,7 +7,7 @@ import argparse
 from alignment_utils import generate_sorted_substrings, align_sequence
 from using_meme import meme_analysis
 from fasta_converter import fasta_format_converter
-from seed_finder import get_top_sequences, seed_meme_analysis, read_html_pwm, calculate_consensus, find_dimer_motifs
+from seed_finder import get_top_sequences, seed_meme_analysis, read_html_pwm, calculate_consensus
 
 def read_sequences_from_fasta_file(file_path, col_index=0):
     """Read sequences from a FASTA file."""
